@@ -1,0 +1,13 @@
+@import "./sass/base";
+@import "./sass/components";
+@import "./components/StarshipList.scss";
+@import "./components/Header.scss";
+@import "./components/Starship.scss";
+
+html {
+  body {
+    font-family: $font-primary;
+    text-align: center;
+    color: $color-primary;
+  }
+}

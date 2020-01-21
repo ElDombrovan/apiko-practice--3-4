@@ -1,0 +1,72 @@
+$font-primary: sans-serif;
+$color-primary: #0c0d0e;
+$color-secondary: #ffe300;
+
+//---mixins---
+@mixin primary-button {
+  background-color: $color-secondary;
+  color: $color-primary;
+  border-color: transparent;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $color-primary;
+    color: $color-secondary;
+  }
+
+  &:active{
+    background-color: white;
+    border: 1px solid $color-secondary;
+    color: $color-primary;
+  }
+};
+
+@mixin transition($value...) {
+  -webkit-transition: $value;
+  -moz-transition: $value; 
+  -o-transition: $value; 
+  transition: $value;
+}
+
+@mixin flexbox(){
+  display:-webkit-box;
+  display:-moz-box;
+  display:-ms-flexbox;
+  display:-webkit-flex;
+  display:flex;
+}
+
+@mixin flex-direction($direction){
+  @if $direction == column {
+  -webkit-flex-direction:vertical;
+  -moz-flex-direction:vertical;
+  -ms-flex-direction:column;
+  -webkit-flex-direction:column;
+  flex-direction:column;
+  }
+  @else {
+  -webkit-flex-direction:horizontal;
+  -moz-flex-direction:horizontal;
+  -ms-flex-direction:row;
+  -webkit-flex-direction:row;
+  flex-direction:row;
+  }
+}
+
+// usage: @include flex-direction(column);
+
+@mixin flex-value($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -ms-flex:  $values;
+  -webkit-flex:  $values;
+  flex:  $values;
+}
+
+@mixin flex-order($order){
+  -webkit-box-ordinal-group: $order;
+  -moz-box-ordinal-group: $order;
+  -ms-flex-order: $order;
+  -webkit-order: $order;
+  order: $order;
+}
